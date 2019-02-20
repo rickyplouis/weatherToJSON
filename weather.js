@@ -1,9 +1,11 @@
 const https = require('https');
 const fs = require('fs');
+const constant = require('./constant');
+
+const { apiKey } = constant;
 
 // Uses ohare airportCoords
 const airportCoords = ['41.9242', '-87.9073']
-const apiKey = 'insert_api_key';
 
 const daysInDec = 31;
 const daysInJan = 31;
@@ -44,12 +46,11 @@ const makeAPICall = (url) => {
 }
 
 const writeJSON = (json) => {
-  console.log('writeJSON', json);
-  console.log('writeJSON typeof json', typeof json);
   fs.writeFile('weather.json', JSON.stringify(json), (err) => {
       if (err) {
           console.log(err);
       }
+      console.log('wrote weather.json');
   });
 }
 
