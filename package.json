@@ -1,13 +1,13 @@
 {
-  "name": "weatherdata",
+  "name": "weatherToJSON",
   "version": "1.0.0",
-  "description": "",
+  "description": "Uses the dark sky api to convert weather data to JSON",
   "main": "weather.js",
   "scripts": {
     "prepublishOnly": "nsp audit --audit-level high",
     "pretest": "eslint .",
     "precommit": "lint-staged && npm run test",
-    "test": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "test": "jest --coverage && cat ./coverage/lcov.info",
     "start": "node index.js",
     "clean": "node src/clean.js"
   },
@@ -59,5 +59,5 @@
     ]
   },
   "author": "rickyplouis",
-  "license": "ISC"
+  "license": "MIT"
 }

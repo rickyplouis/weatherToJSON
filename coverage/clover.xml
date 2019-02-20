@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1550699593536" clover="3.2.0">
+  <project timestamp="1550699593536" name="All files">
+    <metrics statements="12" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1" elements="16" coveredelements="7" complexity="0" loc="12" ncloc="12" packages="1" files="1" classes="1">
+      <file name="time.js" path="C:\Users\Rpierre-louis\Desktop\dev\weatherToJSON\time.js">
+        <metrics statements="12" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="17" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="20" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+      </file>
+    </metrics>
+  </project>
+</coverage>

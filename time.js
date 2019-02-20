@@ -14,7 +14,8 @@ const daysEachMonth = [
   31
 ];
 
-const convertDateToUnix = date => Math.floor(new Date(date).getTime() / 1000);
+const convertDateToUnix = (date = new Date()) =>
+  Math.floor(new Date(date).getTime() / 1000);
 
 const makeMonth = (numOfMonth, year = '2019') => {
   let month = [];
