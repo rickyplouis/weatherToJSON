@@ -18,9 +18,9 @@ const writeJSON = (json) => {
   });
 }
 
-let december = makeMonth('12', daysInDec, '2018');
-let january = makeMonth('01', daysInJan);
-let february = makeMonth('02', 03);
+let december = makeMonth('12', '2018');
+let january = makeMonth('01');
+let february = makeMonth('02');
 
 const combineJSON = (arrayOfJSON) => {
   let json = {
