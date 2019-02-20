@@ -3,50 +3,49 @@ const time = require('./time');
 const helper = require('./helper');
 
 const { makeURL, makeAPICall } = helper;
-const { convertDateToUnix, makeMonth } = time;
+const { makeMonth } = time;
 
-const daysInDec = 31;
-const daysInJan = 31;
-
-const writeJSON = (json) => {
-  console.log('writeJSON::json', json);
-  fs.writeFile('weather.json', JSON.stringify(json), (err) => {
-      if (err) {
-          console.log(err);
-      }
-      console.log('wrote weather.json');
+const writeJSON = json =>
+  fs.writeFile('weather.json', JSON.stringify(json), err => {
+    if (err) {
+      console.log(err);
+      return err;
+    }
   });
-}
 
-let december = makeMonth('12', '2018');
-let january = makeMonth('01');
+// Let december = makeMonth('12', '2018');
+// Let january = makeMonth('01');
 let february = makeMonth('02');
 
-const combineJSON = (arrayOfJSON) => {
+const combineJSON = arrayOfJSON => {
   let json = {
-    data: [],
-  }
+    data: []
+  };
+
   for (let obj of arrayOfJSON) {
     json.data.push(obj);
   }
+
   return json;
-}
+};
 
 const main = () => {
   let jsonArray = [];
-  // use hardcoded data to achieve business objectives
-  let dateRange = february; //december.concat(january, february);
+  // Use hardcoded data to achieve business objectives
+  let dateRange = february; // December.concat(january, february);
   let promises = [];
   for (let date of dateRange) {
-    promises.push(makeAPICall(makeURL(date)))
+    promises.push(makeAPICall(makeURL(date)));
   }
-  Promise.all(promises).then((data) => {
+
+  Promise.all(promises).then(data => {
     for (let res of data) {
       jsonArray.push(JSON.parse(res));
     }
+
     let giantJSON = combineJSON(jsonArray);
     writeJSON(giantJSON.data);
-  })
-}
+  });
+};
 
 main();
